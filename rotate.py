@@ -1,0 +1,10 @@
+import math
+r = open("rotate.in", "r")
+w = open("rotate.out", "w")
+lines = r.readlines()
+H, V, L, X, Y = float(lines[0].split()[0]), float(lines[0].split()[1]), float(lines[0].split()[2]), float(lines[0].split()[3]), float(lines[0].split()[4])
+A = round(L / (2 * math.tan((V/2)*math.pi/180)), 1)
+W = round(math.tan((H/2)*math.pi/180) * A * 2, 1)
+R = round(math.atan(-Y/A) * 180/math.pi, 1)
+P = round(math.atan(X/A) * 180/math.pi, 1)
+print(A, W, R, P, file=w)
